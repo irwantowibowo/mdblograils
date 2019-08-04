@@ -1,0 +1,11 @@
+<h2 align="center"><%= @article.title %></h2>
+
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center"><strong>Deskripsi:</strong></h4>
+  <hr>
+  <%= simple_format(@article.description) %>
+
+  <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-xs btn-primary' %>
+  <%= link_to "Delete", article_path(@article), method: :delete, class: 'btn btn-xs btn-danger', data: {confirm: 'Yakin mau hapus??'} %>
+  <%= link_to "Cancel", root_path, class: 'btn btn-xs btn-warning' %>
+</div>
