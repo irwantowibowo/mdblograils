@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(resources_params)
+    @article.user = User.first
 
     if @article.save
       flash[:success] = "Berhasil menambahkan data"
@@ -29,6 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
     if @article.update(resources_params)
       flash[:success] = "Berhasil mengubah data"
       redirect_to article_path(@article)
